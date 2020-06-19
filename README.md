@@ -29,5 +29,5 @@ $ gobuster dir -w $DIRLIST -u http://10.10.10.185:80
 
 ## TODO
 
-[ ] - JTR
-[ ] - Hashcat
+- [ ] JTR  
+- [ ] Hashcat  
