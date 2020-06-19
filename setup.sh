@@ -5,8 +5,9 @@ BASHRC="/home/$(logname)/.bashrc"
 # Repo fetching
 echo "[+] Updating OS packages..." 
 sudo dnf update -y &>/dev/null
-echo "[+] Installing Python and Git..." 
-sudo dnf install -y python3 python3-pip git &>/dev/null
+sudo dnf install -y make &>/dev/null
+echo "[+] Installing Python, Ruby and Git..." 
+sudo dnf install -y python3 python3-pip rubygems ruby-devel git &>/dev/null
 
 # Add Neo4J repo (see https://neo4j.com/docs/operations-manual/current/installation/linux/rpm/) and install
 echo "[+] Installing Neo4j..." 
@@ -71,6 +72,9 @@ wget https://github.com/BloodHoundAD/BloodHound/releases/download/3.0.4/BloodHou
 unzip BloodHound-linux-x64.zip &>/dev/null
 mv BloodHound-linux-x64 bloodhound && sudo mv bloodhound /usr/share &>/dev/null
 rm BloodHound-linux-x64.zip &>/dev/null
+
+echo -e "\t- Installing EvilWinRM..."
+gem install evil-winrm &>/dev/null
 
 # Go
 echo "[+] Installing hax0r-tools from Go..." 
