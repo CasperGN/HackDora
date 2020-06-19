@@ -5,7 +5,7 @@ BASHRC="/home/$(logname)/.bashrc"
 # Repo fetching
 echo "[+] Updating OS packages..." 
 sudo dnf update -y &>/dev/null
-sudo dnf install -y make &>/dev/null
+sudo dnf install -y make mingw32-gcc &>/dev/null
 echo "[+] Installing Python, Ruby and Git..." 
 sudo dnf install -y python3 python3-pip rubygems ruby-devel git &>/dev/null
 
@@ -25,7 +25,7 @@ sudo dnf install -y java-11-openjdk &>/dev/null
 sudo dnf install -y neo4j-4.0.5 &>/dev/null
 
 echo "[+] Installing hax0r-tools from repo..." 
-sudo dnf install -y nmap wireshark &>/dev/null
+sudo dnf install -y nmap wireshark ftp &>/dev/null
 
 # Pip packages
 echo "[+] Installing hax0r-tools from Pip..." 
