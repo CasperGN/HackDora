@@ -48,12 +48,15 @@ echo -e "\t- Installing Wordlists..."
 git clone https://github.com/praetorian-code/Hob0Rules.git &>/dev/null && \
 	sudo cp -r Hob0Rules/wordlists /usr/share &>/dev/null && \
 	sudo gunzip -f /usr/share/wordlists/rockyou.txt.gz /usr/share/wordlists/rockyou.txt &>/dev/null && \
-	sudo rm usr/share/wordlists/rockyou.txt.gz &>/dev/null
-if [ -d /usr/share/SecLists ]; then
-	sudo rm -rf /usr/share/SecLists
+	sudo gunzip -f /usr/share/wordlists/english.txt.gz /usr/share/wordlists/english.txt &>/dev/null && \
+	sudo rm /usr/share/wordlists/rockyou.txt.gz &>/dev/null && \
+	sudo rm /usr/share/wordlists/english.txt.gz &>/dev/null
+	
+if [ -d /usr/share/wordlists/SecLists ]; then
+	sudo rm -rf /usr/share/wordlists/SecLists
 fi
 git clone https://github.com/danielmiessler/SecLists.git &>/dev/null && \
-	sudo mv SecLists /usr/share &>/dev/null
+	sudo mv SecLists /usr/share/wordlists &>/dev/null
 	
 echo -e "\t- Installing ActiveDirectoryEnum..."
 if [ -d /usr/share/ActiveDirectoryEnumeration ]; then
