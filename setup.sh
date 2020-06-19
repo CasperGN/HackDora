@@ -11,7 +11,7 @@ sudo dnf install -y python3 python3-pip git &>/dev/null
 # Add Neo4J repo (see https://neo4j.com/docs/operations-manual/current/installation/linux/rpm/) and install
 echo "[+] Installing Neo4j..." 
 rpm --import https://debian.neo4j.com/neotechnology.gpg.key &>/dev/null
-cat <<EOF>  /etc/yum.repos.d/neo4j.repo
+cat <<EOF >  /etc/yum.repos.d/neo4j.repo 
 [neo4j]
 name=Neo4j RPM Repository
 baseurl=https://yum.neo4j.com/stable
@@ -88,7 +88,7 @@ grep -P "^alias\sade" $BASHRC &>/dev/null || echo 'alias ade="python /usr/share/
 grep -P "^ROCKYOU" $BASHRC &>/dev/null || echo 'ROCKYOU="/usr/share/wordlists/rockyou.txt"' >> $BASHRC
 
 # Cleanup 
-find . -type d -not -name 'setup.sh|README.md|.git' -exec rm -rf {} + &>/dev/null
+find . -type d -not -name '.git' -exec rm -rf {} + &>/dev/null
 
 echo "[+] Done" 
 echo -e "Remember to source environment after changes with:\n. $BASHRC"
