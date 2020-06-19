@@ -51,7 +51,7 @@ git clone https://github.com/praetorian-code/Hob0Rules.git &>/dev/null && \
 	sudo gunzip -f /usr/share/wordlists/english.txt.gz /usr/share/wordlists/english.txt &>/dev/null && \
 	sudo rm /usr/share/wordlists/rockyou.txt.gz &>/dev/null && \
 	sudo rm /usr/share/wordlists/english.txt.gz &>/dev/null
-	
+
 if [ -d /usr/share/wordlists/SecLists ]; then
 	sudo rm -rf /usr/share/wordlists/SecLists
 fi
@@ -94,6 +94,7 @@ grep -P "^alias\sbloodhound" $BASHRC &>/dev/null || echo 'alias bloodhound="sudo
 grep -P "^alias\sade" $BASHRC &>/dev/null || echo 'alias ade="python /usr/share/ActiveDirectoryEnumeration/activeDirectoryEnum.py"' >> $BASHRC
 
 grep -P "^ROCKYOU" $BASHRC &>/dev/null || echo 'ROCKYOU="/usr/share/wordlists/rockyou.txt"' >> $BASHRC
+grep -P "^DIRLIST" $BASHRC &>/dev/null || echo 'DIRLIST="/usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt"' >> $BASHRC
 
 # Cleanup 
 find . -type d -not -name '.git' -exec rm -rf {} + &>/dev/null
