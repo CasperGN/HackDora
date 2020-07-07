@@ -5,7 +5,7 @@ BASHRC="/home/$(logname)/.bashrc"
 # Repo fetching
 echo "[+] Updating OS packages..." 
 sudo dnf update -y &>/dev/null
-sudo dnf install -y make gcc-c++ mingw64-filesystem mingw32-gcc mingw32-gcc-c++ mingw32-gcc-objc mingw32-gcc-objc++ mingw32-gcc-gfortran mingw64-gcc mingw64-gcc-c++ mingw64-gcc-objc mingw64-gcc-objc++ mingw64-gcc-gfortran  &>/dev/null
+sudo dnf install -y make gcc-c++ mingw64-filesystem mingw32-gcc mingw32-gcc-c++ mingw32-gcc-objc mingw32-gcc-objc++ mingw32-gcc-gfortran mingw64-gcc mingw64-gcc-c++ mingw64-gcc-objc mingw64-gcc-objc++ mingw64-gcc-gfortran java-devel &>/dev/null
 echo "[+] Installing Python, Ruby and Git..." 
 sudo dnf install -y python3 python3-pip rubygems ruby-devel git &>/dev/null
 
