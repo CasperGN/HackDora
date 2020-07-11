@@ -6,8 +6,13 @@ BASHRC="/home/$(logname)/.bashrc"
 echo "[+] Updating OS packages..." 
 sudo dnf update -y &>/dev/null
 sudo dnf install -y make gcc-c++ mingw64-filesystem mingw32-gcc mingw32-gcc-c++ mingw32-gcc-objc mingw32-gcc-objc++ mingw32-gcc-gfortran mingw64-gcc mingw64-gcc-c++ mingw64-gcc-objc mingw64-gcc-objc++ mingw64-gcc-gfortran java-latest-openjdk-devel &>/dev/null
-echo "[+] Installing Python, Ruby and Git..." 
-sudo dnf install -y python3 python3-pip rubygems ruby-devel git &>/dev/null
+
+echo "[+] Adding forensics.cert as rpm repo"
+wget https://forensics.cert.org/cert-forensics-tools-release-32.rpm &>/dev/null
+sudo dnf install cert-forensics-tools-release-32.rpm &>/dev/null
+
+echo "[+] Installing Python, Ruby, Go and Git..." 
+sudo dnf install -y python3 python3-pip rubygems ruby-devel git golang &>/dev/null
 
 # Add Neo4J repo (see https://neo4j.com/docs/operations-manual/current/installation/linux/rpm/) and install
 echo "[+] Installing Neo4j..." 
@@ -25,7 +30,7 @@ sudo dnf install -y java-11-openjdk &>/dev/null
 sudo dnf install -y neo4j-4.0.5 &>/dev/null
 
 echo "[+] Installing hax0r-tools from repo..." 
-sudo dnf install -y nmap wireshark ftp &>/dev/null
+sudo dnf install -y nmap wireshark ftp fcrackzip &>/dev/null
 
 # Pip packages
 echo "[+] Installing hax0r-tools from Pip..." 
