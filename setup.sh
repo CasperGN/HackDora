@@ -78,6 +78,15 @@ unzip BloodHound-linux-x64.zip &>/dev/null
 mv BloodHound-linux-x64 bloodhound && sudo mv bloodhound /usr/share &>/dev/null
 rm BloodHound-linux-x64.zip &>/dev/null
 
+echo -e "\t- Installing SQLMap..."
+if [ -d /usr/share/sqlmap ]; then
+	rm -rf /usr/share/sqlmap &>/dev/null
+fi
+git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git &>/dev/null && \
+	sudo mv sqlmap /usr/share/ &>/dev/null
+
+# Ruby gems
+echo "[+] Installing hax0r-tools from Ruby-Gems..." 
 echo -e "\t- Installing EvilWinRM..."
 gem install evil-winrm &>/dev/null
 
@@ -105,6 +114,7 @@ grep -P "^PATH=\"/usr" $BASHRC &>/dev/null || echo 'PATH="/usr/share:$PATH"' >> 
 grep -P "^alias\ssmb" $BASHRC &>/dev/null || echo 'alias smbmap="python /usr/share/smbmap/smbmap.py --no-banner"' >> $BASHRC
 grep -P "^alias\sbloodhound" $BASHRC &>/dev/null || echo 'alias bloodhound="sudo neo4j start;/usr/share/bloodhound/BloodHound"' >> $BASHRC
 grep -P "^alias\sade" $BASHRC &>/dev/null || echo 'alias ade="python /usr/share/ActiveDirectoryEnumeration/activeDirectoryEnum.py"' >> $BASHRC
+grep -P "^alias\ssqlmap" $BASHRC &>/dev/null || echo 'alias sqlmap="/usr/share/sqlmap/sqlmap.py"' >> $BASHRC
 
 grep -P "^ROCKYOU" $BASHRC &>/dev/null || echo 'ROCKYOU="/usr/share/wordlists/rockyou.txt"' >> $BASHRC
 grep -P "^DIRLIST" $BASHRC &>/dev/null || echo 'DIRLIST="/usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt"' >> $BASHRC
