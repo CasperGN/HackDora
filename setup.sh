@@ -90,6 +90,10 @@ go get github.com/OJ/gobuster &>/dev/null && \
 echo -e "\t- Installing GoHead..."
 go get https://github.com/CasperGN/GoHead/tree/master/cmd/gohead &>/dev/null && \
 	sudo mv ~/go/bin/gohead /usr/share/ &>/dev/null
+
+echo -e "\t- Installing ffuf..."
+go get github.com/ffuf/ffuf &>/dev/null && \
+	sudo mv ~/go/bin/ffuf /usr/share/ &>/dev/null
 	
 # Handling env variables	
 echo "[+] Updating environment..." 
