@@ -103,6 +103,22 @@ go get https://github.com/CasperGN/GoHead/tree/master/cmd/gohead &>/dev/null && 
 echo -e "\t- Installing ffuf..."
 go get github.com/ffuf/ffuf &>/dev/null && \
 	sudo mv ~/go/bin/ffuf /usr/share/ &>/dev/null
+
+echo -e "\t- Installing subfinder..."
+GO111MODULE=auto go get -u -v github.com/projectdiscovery/subfinder/cmd/subfinder &>/dev/null && \
+	sudo mv ~/go/bin/subfinder /usr/share/ &>/dev/null
+
+echo -e "\t- Installing dnsprobe..."
+GO111MODULE=on go get -u -v github.com/projectdiscovery/dnsprobe &>/dev/null && \
+	sudo mv ~/go/bin/dnsprobe /usr/share/ &>/dev/null
+
+echo -e "\t- Installing nuclei..."
+GO111MODULE=on go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei &>/dev/null && \
+	sudo mv ~/go/bin/nuclei /usr/share/ &>/dev/null
+
+echo -e "\t- Installing naabu..."
+GO111MODULE=on go get -v github.com/projectdiscovery/naabu/cmd/naabu &>/dev/null && \
+	sudo mv ~/go/bin/naabu /usr/share/ &>/dev/null
 	
 # Handling env variables	
 echo "[+] Updating environment..." 
