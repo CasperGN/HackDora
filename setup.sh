@@ -120,9 +120,10 @@ echo -e "\t- Installing naabu..."
 GO111MODULE=on go get -v github.com/projectdiscovery/naabu/cmd/naabu &>/dev/null && \
 	sudo mv ~/go/bin/naabu /usr/share/ &>/dev/null
 	
-echo -e "\t- Installing Webanalyzer..."
+echo -e "\t- Installing Webanalyze..."
 go get -v -u github.com/rverton/webanalyze/cmd/webanalyze &>/dev/null && \
-	sudo mv ~/go/bin/webanalyze /usr/share/ &>/dev/null
+	sudo mv ~/go/bin/webanalyze /usr/share/ &>/dev/null && \
+	webanalyze -update &>/dev/null
 
 # Handling env variables	
 echo "[+] Updating environment..." 
