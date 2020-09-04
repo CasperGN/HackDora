@@ -9,7 +9,7 @@ sudo dnf install -y make gcc-c++ mingw64-filesystem mingw32-gcc mingw32-gcc-c++ 
 
 echo "[+] Adding forensics.cert as rpm repo"
 wget https://forensics.cert.org/cert-forensics-tools-release-32.rpm &>/dev/null
-sudo dnf install cert-forensics-tools-release-32.rpm &>/dev/null
+sudo dnf install -y cert-forensics-tools-release-32.rpm &>/dev/null
 
 echo "[+] Installing Python, Ruby, Go and Git..." 
 sudo dnf install -y python3 python3-pip rubygems ruby-devel git golang &>/dev/null
