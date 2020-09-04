@@ -141,7 +141,7 @@ grep -P "^ROCKYOU" $BASHRC &>/dev/null || echo 'ROCKYOU="/usr/share/wordlists/ro
 grep -P "^DIRLIST" $BASHRC &>/dev/null || echo 'DIRLIST="/usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt"' >> $BASHRC
 
 # Cleanup 
-find . -type d -not -name '.git' -exec rm -rf {} + &>/dev/null
+#find . -type d -not -name '.git' -exec rm -rf {} + &>/dev/null
 
 echo "[+] Done" 
 echo -e "Remember to source environment after changes with:\n. $BASHRC"
