@@ -97,7 +97,7 @@ go get github.com/OJ/gobuster &>/dev/null && \
 	sudo mv ~/go/bin/gobuster /usr/share/ &>/dev/null
 	
 echo -e "\t- Installing GoHead..."
-go get https://github.com/CasperGN/GoHead/tree/master/cmd/gohead &>/dev/null && \
+go get github.com/CasperGN/GoHead/cmd/gohead &>/dev/null && \
 	sudo mv ~/go/bin/gohead /usr/share/ &>/dev/null
 
 echo -e "\t- Installing ffuf..."
