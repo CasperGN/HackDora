@@ -127,7 +127,7 @@ go get -v -u github.com/rverton/webanalyze/cmd/webanalyze &>/dev/null && \
 
 echo -e "\t- Installing GAU..."
 GO111MODULE=on go get -u -v github.com/lc/gau &>/dev/null && \
-	sudo mv ~/go/bin/gau /usr/share/ &>/dev/null
+	sudo mv ~/go/bin/gau /usr/bin/ &>/dev/null
 
 # Handling env variables	
 echo "[+] Updating environment..." 
