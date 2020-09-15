@@ -1,4 +1,6 @@
 # HackDora
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FCasperGN%2FHackDora.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FCasperGN%2FHackDora?ref=badge_shield)
+
 
 My Fedora setup for pentesting & Bug hunting
 
@@ -31,3 +33,7 @@ $ gobuster dir -w $DIRLIST -u http://10.10.10.185:80
 
 - [ ] JTR  
 - [ ] Hashcat  
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FCasperGN%2FHackDora.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FCasperGN%2FHackDora?ref=badge_large)
